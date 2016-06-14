@@ -48,9 +48,9 @@ class RoomChannel < ApplicationCable::Channel
       res = Net::HTTP.get_response(uri)
       #puts res.body if res.is_a?(Net::HTTPSuccess)
       json_data = JSON.parse(res.body)
-      final_arr.push(*json_data)
+      #final_arr.push(*json_data)
       #Message.create! content: data['res.body']
-      ActionCable.server.broadcast 'room_channel', message: final_arr.reverse
+      ActionCable.server.broadcast 'room_channel', message: json_data["feeds"]
     else
       puts "------------------------------------------------------"
       puts "------------------------------------------------------"
@@ -65,7 +65,8 @@ class RoomChannel < ApplicationCable::Channel
       #puts res.body if res.is_a?(Net::HTTPSuccess)
      
       json = JSON.parse(res.body)
-      final_arr.push(*json)
+      #final_arr.push(*json)
+      ActionCable.server.broadcast 'room_channel', message: json["feeds"]
       
       #final_json.concat(json);
       end_time =  json["feeds"][0]["created_at"]
