@@ -1,17 +1,27 @@
 <div class="container">
-<h1>Channel Data</h1>
+
 
 <!-- <div id="messages">
 	<%= render @messages %>
 </div> -->
 
 
-<div class="col-md-8">
+<div class="col-md-12">
+<h1>Channel Data</h1>
 <form>
-	<label> Type in a number: </label><br>
+	<label> Enter the number of records you want to fetch: </label><br>
 	<input type="number" data-behavior="room_speaker">
 </form>
 </div>
+
+<div id="write_message" class="col-md-12">
+<form>
+
+	<label> Enter the data you want to write: </label><br>
+	<input type="number" data-behavior="room_writer">
+</form>
+</div>
+
 
 <div id="channel_info" class="col-md-8 col-lg-8 pull-left">
     <table id="channel_details" class="table table-bordered">

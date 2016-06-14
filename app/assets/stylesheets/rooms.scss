@@ -5,3 +5,12 @@
 #content_data,#channel_info{
    margin-top:12px;
 }
+
+/* to remove up-down arrows from the number input field */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0; 
+}
